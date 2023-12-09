@@ -4,7 +4,7 @@
 base_directory=$(pwd)
 
 # Loop to create subdirectories and files
-for i in {1..25}
+for i in {3..25}
 do
     # Create a subdirectory for each day
     day_directory="$base_directory/src/day$i"
@@ -12,9 +12,15 @@ do
 
     # Create a Rust file in the subdirectory
     filename="$day_directory/mod.rs"
-    echo "// Module for day $i" > "$filename"
-    echo "pub fn run() {" >> "$filename"
+
+    echo "use std::error::Error;" >> "$filename"
+    echo "" >> "$filename"
+    echo "// Module for day $i" >> "$filename"
+    echo "" >> "$filename"
+    echo "pub fn run() -> Result<(), Box<dyn Error>> {" >> "$filename"
     echo "    println!(\"Day $i module running...\");" >> "$filename"
+    echo "" >> "$filename"
+    echo "    Ok(())" >> "$filename"
     echo "}" >> "$filename"
 done
 
