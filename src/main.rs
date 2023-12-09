@@ -11,7 +11,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     if args.len() > 1 {
         match args[1].as_str() {
             "day1" => day1::run()?,
-            "day2" => day2::run(),
+            "day2" => day2::run()?,
             "day3" => day3::run(),
             "day4" => day4::run(),
             "day5" => day5::run(),
